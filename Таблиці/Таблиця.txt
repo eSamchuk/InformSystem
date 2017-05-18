@@ -1,0 +1,12 @@
+/****** Script for SelectTopNRows command from SSMS  ******/
+SELECT RegionName
+      ,VariableName
+      ,ActualValue
+      ,ChangeSpeedActual
+      ,ActualSignif
+      ,PredictedValue
+      ,Diff
+      ,PredictedSignif
+  FROM RegionsExtreme, Regions, Variables
+  Where Regions.RegionID = RegionsExtreme.RegionID AND Variables.VariableID = RegionsExtreme.VariableID
+  AND RegionsExtreme.RegionID = 2
